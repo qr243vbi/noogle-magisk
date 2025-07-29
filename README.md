@@ -16,6 +16,10 @@ It requires Magisk to be installed obviously as it's a Magisk module. If you don
 > [!TIP]
 > It's a good idea to enable ADB debugging as well before installing in case of any issues.
 
+> [!WARNING]
+> Please make sure that the contents of the `remove_files` string in the [common.sh](./src/module-microg/common.sh) script exist on your device.
+> If not, use a command like `# find -L /system -type f -name '*<GmsCore|Phonesky|...>*'` to find the correct path, replace it and then follow the [Build Instructions](#build).
+
 1. Download latest version from [releases](https://github.com/SelfRef/noogle-magisk/releases)
     - Or build it yourself
 2. Install through Magisk app
