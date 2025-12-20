@@ -1,7 +1,5 @@
 remove_files="
 /system/product/priv-app/GmsCore
-/system/product/priv-app/PrebuiltGmsCore
-/system/product/priv-app/GoogleServicesFramework
 /system/product/priv-app/Phonesky
 /system/system_ext/priv-app/GoogleServicesFramework
 /system/product/etc/permissions/split-permissions-google.xml

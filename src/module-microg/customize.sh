@@ -14,18 +14,17 @@ done
 echo "-------------------------------------------"
 echo '[I] Done processing files.'
 
-
-
 echo
 echo "[P] Extracting libraries..."
 unzip -q -o "$MODPATH/$gms_path" 'lib/*' -d "$MODPATH/$gms_dir"
 mv "$MODPATH/$gms_dir/lib/arm64-v8a" "$MODPATH/$gms_dir/lib/arm64"
 mv "$MODPATH/$gms_dir/lib/armeabi-v7a" "$MODPATH/$gms_dir/lib/arm"
-mv "$MODPATH/$gms_dir/lib/x86" "$MODPATH/$gms_dir/lib/x86"
-mv "$MODPATH/$gms_dir/lib/x86_64" "$MODPATH/$gms_dir/lib/x64"
+# mv "$MODPATH/$gms_dir/lib/x86" "$MODPATH/$gms_dir/lib/x86"
+# mv "$MODPATH/$gms_dir/lib/x86_64" "$MODPATH/$gms_dir/lib/x64"
 echo "-------------------------------------------"
 echo "[M] FILE                             STATUS"
 echo "-------------------------------------------"
+
 for file in $(find "$MODPATH/$gms_dir/lib/$ARCH" -type f); do
 	printf "%-40s %s\n" "[I] $(basename $file)" "OK"
 done

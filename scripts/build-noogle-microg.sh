@@ -76,6 +76,7 @@ gms_dir="$destination_dir/priv-app/GmsCore$suffix"
 mkdir -p "$module_dir/$gms_dir"
 mkdir -p "$module_dir/$destination_dir/priv-app/Phonesky$suffix"
 mkdir -p "$module_dir/$destination_dir/priv-app/GoogleServicesFramework$suffix"
+mkdir -p "$module_dir/system/system_ext/priv-app"
 
 gms_path="$gms_dir/GmsCore$suffix.apk"
 cp "$apk_dir"/com.google.android.gms* "$module_dir/$gms_path"
@@ -86,7 +87,7 @@ echo "[P] Copying module files to module directory..."
 cp -r "$src_dir/$module_dir"/* "$module_dir/"
 mv "$module_dir/etc" "$module_dir/$destination_dir/"
 
-echo "[P] Pathing customize script..."
+echo "[P] Patching customize script..."
 sed -i "1i gms_path=$gms_path" "$module_dir/customize.sh"
 sed -i "1i gms_dir=$gms_dir" "$module_dir/customize.sh"
 
@@ -100,8 +101,8 @@ module_filename="noogle-microg-$module_version.zip"
 echo "[P] Compressing module archive..."
 mkdir -p "$dist_dir"
 rm -f "$dist_dir/$module_filename"
-cd "$module_dir"
+cd "$module_dir" || exit
 zip -q -r "../$dist_dir/$module_filename" . -x **/.gitkeep
-cd -
+cd - || exit
 
 echo "[I] Module noogle-microg built successfully!"
