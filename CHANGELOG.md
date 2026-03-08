@@ -1,3 +1,7 @@
+# v3.0
+- Updated privapp-permissions for microG GmsCore 0.3.12 and Companion 84022624
+- **Breaking:** Not compatible with GmsCore 0.3.6 and older
+
 # v2.1
 - Prevent uninstall microG updates during self-check (Action button in Magisk)
 
