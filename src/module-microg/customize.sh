@@ -8,8 +8,12 @@ echo "-------------------------------------------"
 echo "[M] FILE/DIR                         STATUS"
 echo "-------------------------------------------"
 for file in $remove_files; do
-	printf "%-40s %s\n" "[I] .../$(basename "$file")" "OK"
-	mknod "$MODPATH/$file" c 0 0
+	mkdir -p "$MODPATH$(dirname "$file")"
+	if mknod "$MODPATH/$file" c 0 0; then
+		printf "%-40s %s\n" "[I] .../$(basename "$file")" "OK"
+	else
+		printf "%-40s %s\n" "[E] .../$(basename "$file")" "FAILED"
+	fi
 done
 echo "-------------------------------------------"
 echo '[I] Done processing files.'
