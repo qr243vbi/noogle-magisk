@@ -37,6 +37,7 @@ It requires Magisk to be installed obviously as it's a Magisk module. If you don
 1. Check if `bash` preinstalled
     - Check if [msys2](https://www.msys2.org) installed on Windows, or install msys2 following the [instructions](https://www.msys2.org/#installation)
 2. Install `zip`, `curl`, `jq` if not present
+    - Type `pacman -S --needed zip curl jq` on msys2
 3. [Download APKs manually](https://microg.org/download.html) and place in `apk/` directory or run `./scripts/download-apks.sh`
 4. Run `scripts/build-noogle-microg.sh`
     - Check `-h` flag for help with build options
