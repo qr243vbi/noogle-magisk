@@ -1,6 +1,6 @@
 # noogle-magisk
 
-Magisk modules for removing/replacing Google applications on stock Android 11-17.
+Magisk modules for installing microG on stock Android 11-17.
 
 ## Modules
 
