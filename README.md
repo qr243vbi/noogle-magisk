@@ -16,6 +16,10 @@ It requires Magisk to be installed obviously as it's a Magisk module. If you don
 > [!TIP]
 > It's a good idea to enable ADB debugging as well before installing in case of any issues.
 
+> [!WARNING]
+> Please make sure that the contents of the `remove_files` string in the [common.sh](./src/module-microg/common.sh) script exist on your device.
+> If not, use a command like `# find -L /system -type f -name '*<GmsCore|Phonesky|...>*'` to find the correct path, replace it and then follow the [Build Instructions](#build).
+
 1. Download latest version from [releases](https://github.com/SelfRef/noogle-magisk/releases)
     - Or build it yourself
 2. Install through Magisk app
@@ -33,8 +37,7 @@ It requires Magisk to be installed obviously as it's a Magisk module. If you don
 
 0. Use Linux, Mac or WSL on Windows
 1. Install `zip`, `curl`, `jq` if not present
-2. [Download APKs manually](https://microg.org/download.html) and place in `apk/`
-    - Or run `scripts/download-apks.sh`
+2. [Download APKs manually](https://microg.org/download.html) and place in `apk/` directory or run `./scripts/download-apks.sh`
 3. Run `scripts/build-noogle-microg.sh`
     - Check `-h` flag for help with build options
     - Module will be created in `dist/`

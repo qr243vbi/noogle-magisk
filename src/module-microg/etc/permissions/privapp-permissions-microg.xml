@@ -21,15 +21,43 @@
         <permission name="android.permission.UPDATE_APP_OPS_STATS"/>
         <permission name="android.permission.UPDATE_DEVICE_STATS"/>
         <permission name="android.permission.WATCH_APPOPS"/>
+        <permission name="android.permission.BLUETOOTH"/>
+        <permission name="android.permission.BLUETOOTH_ADMIN"/>
+        <permission name="android.permission.BLUETOOTH_ADVERTISE"/>
+        <permission name="android.permission.BLUETOOTH_CONNECT"/>
+        <permission name="android.permission.BLUETOOTH_SCAN"/>
+        <permission name="com.google.android.gms.nearby.exposurenotification.EXPOSURE_CALLBACK"/>
+        <permission name="com.google.android.gms.permission.AD_ID"/>
+        <permission name="com.google.android.gms.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+        <permission name="android.permission.PROVIDE_REMOTE_CREDENTIALS"/>
+        <permission name="android.permission.PROVIDE_DEFAULT_ENABLED_CREDENTIAL_SERVICE"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.LOCATION_BYPASS"/>
+        <permission name="android.permission.ACTIVITY_RECOGNITION"/>
+        <permission name="android.permission.CAMERA"/>
+        <permission name="android.permission.MODIFY_AUDIO_SETTINGS"/>
     </privapp-permissions>
 
     <privapp-permissions package="com.android.vending">
-        <permission name="android.permission.DELETE_PACKAGES"/>
-        <permission name="android.permission.FAKE_PACKAGE_SIGNATURE"/>
-        <permission name="android.permission.INSTALL_PACKAGES"/>
+        <permission name="android.permission.INTERNET"/>
+        <permission name="android.permission.POST_NOTIFICATIONS"/>
+        <permission name="android.permission.GET_ACCOUNTS"/>
+        <permission name="org.microg.gms.permission.READ_SETTINGS"/>
+        <permission name="org.microg.gms.permission.WRITE_SETTINGS"/>
         <permission name="android.permission.INTERACT_ACROSS_PROFILES"/>
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
-        <permission name="android.permission.QUERY_ALL_PACKAGES"/>
+        <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+        <permission name="com.google.android.gms.permission.READ_SETTINGS"/>
+        <permission name="com.google.android.gms.permission.WRITE_SETTINGS"/>
         <permission name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+        <permission name="android.permission.QUERY_ALL_PACKAGES"/>
+        <permission name="android.permission.INSTALL_PACKAGES"/>
+        <permission name="android.permission.DELETE_PACKAGES"/>
+        <permission name="android.permission.ACCESS_NETWORK_STATE"/>
+        <permission name="com.google.android.gms.auth.permission.GOOGLE_ACCOUNT_CHANGE"/>
+        <permission name="android.permission.USE_CREDENTIALS"/>
+        <permission name="com.android.vending.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+        <permission name="android.permission.FAKE_PACKAGE_SIGNATURE"/>
+        <permission name="android.permission.FOREGROUND_SERVICE"/>
     </privapp-permissions>
 </permissions>
