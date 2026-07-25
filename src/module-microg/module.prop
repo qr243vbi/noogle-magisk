@@ -3,5 +3,5 @@ name=Noogle microG
 version=v3.16
 versionCode=316
 author=qr243vbi
-description=Replaces Google Services with microG
+description=Installs microG
 updateJson=https://raw.githubusercontent.com/qr243vbi/noogle-magisk/refs/heads/master/update-microg.json
