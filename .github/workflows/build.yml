@@ -2,6 +2,9 @@ name: Build
 
 on:
   push:
+    paths:
+      - 'src/module-microg/**'
+      - '!src/module-microg/module.prop'
   workflow_dispatch:
   schedule:
     - cron: "0 2 * * *"
