@@ -69,8 +69,7 @@ In order for microG apps to have the correct signatures visible by Android, your
 
 1. Enable Zygisk in Magisk's settings
 2. Download and install LSPosed through Magisk
-    - [JingMatrix fork](https://github.com/JingMatrix/LSPosed/releases) up to Android 15 (maintained)
-    - [Official version](https://github.com/LSPosed/LSPosed/releases) up to Android 14 (not maintaned anymore)
+    - [JingMatrix fork](https://github.com/JingMatrix/LSPosed/releases)
 3. Download and install [FakeGApps](https://github.com/whew-inc/FakeGApps/releases) APK
 4. Reboot
 5. Open LSPosed from notifications and enable FakeGapps module
