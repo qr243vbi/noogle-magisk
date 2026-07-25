@@ -34,7 +34,7 @@ It requires Magisk to be installed obviously as it's a Magisk module. If you don
 
 ## Build
 
-0. Use any PC with `bash` shell preinstalled
+1. Check if `bash` preinstalled
     - Check if [msys2(https://www.msys2.org) installed on Windows, or install msys2 following the [instructions](https://www.msys2.org/#installation)
 2. Install `zip`, `curl`, `jq` if not present
 3. [Download APKs manually](https://microg.org/download.html) and place in `apk/` directory or run `./scripts/download-apks.sh`
