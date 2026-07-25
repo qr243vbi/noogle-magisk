@@ -3,7 +3,7 @@
 <!--
     Privileged permission whitelist for microG.
     Only signature|privileged permissions need to be listed here.
-    Based on MinMicroG / microG Installer Revived, updated for GmsCore 0.3.12.
+    Based on MinMicroG / microG Installer Revived, updated for GmsCore 0.3.16.
 -->
 
 <permissions>
