@@ -6,8 +6,7 @@ Magisk modules for installing microG on stock Android 11-17.
 
 Name | Description
 --- | ---
-Noogle microG | Installs microG Services in place of Google Services (if present)
-Noogle Debloat [WIP] | Removes other Google system apps from Android (still can be installed from store)
+Noogle microG | Installs microG Services
 
 ## Install
 
