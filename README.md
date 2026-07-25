@@ -87,7 +87,3 @@ In this case if you have ADB debugging enabled just connect your phone to PC and
 More nuclear option is to run `adb shell magisk --remove-modules`. It will remove all modules from Magisk and reboot.
 
 If you don't have ADB enabled, you may try to restart the device a few times (holding Power + Vol-) while keeping Vol- for a while until animalted boot animation will start. This will trigger Magisk safe mode and modules will be disabled. More about this in [official documentation](https://topjohnwu.github.io/Magisk/faq.html).
-
-## QA
-- Q: What is the difference between this and other microG installers?
-- A: This module aims for stock Android support with Google apps preinstalled and doesn't require debloating Google apps first. Should work on AOSP-based as well.
