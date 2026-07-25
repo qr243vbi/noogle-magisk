@@ -54,7 +54,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ZIP=$(ls dist/noogle-microg-v*.zip | head -n1)
-          TAG=$(basename "$ZIP" .zip)
+          TAG=$(basename "$ZIP" .zip | sed 's@noogle-microg-@@g;')
           echo "Release tag: $TAG"
           if git rev-parse "$TAG" >/dev/null 2>&1; then
             echo "[I] Tag $TAG already exists"
@@ -71,7 +71,7 @@ jobs:
             echo "[I] Creating new release $TAG"
             gh release create "$TAG" \
               "$ZIP" \
-              --title "$TAG" \
+              --title "Noogle microG $TAG" \
               --generate-notes
           fi
 
