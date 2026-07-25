@@ -1,3 +1,6 @@
+# v3.16
+- Updated privapp-permissions for microG GmsCore 0.3.16
+
 # v3.0
 - Updated privapp-permissions for microG GmsCore 0.3.12 and Companion 84022624
 - **Breaking:** Not compatible with GmsCore 0.3.6 and older
