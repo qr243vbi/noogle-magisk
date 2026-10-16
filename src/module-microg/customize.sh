@@ -1,5 +1,7 @@
 source "$MODPATH/common.sh"
 
+rm -rf /data/data/com.google.android.gms/
+
 remove_package_updates google
 
 echo

@@ -1,6 +1,13 @@
+[SelfRef](https://github.com/SelfRef/noogle-magisk) updated and fixed original module. Use his module instead.
+
+
+
+
+
+
 # noogle-magisk
 
-Magisk modules for installing microG on stock Android 11-17.
+Magisk/KernelSU(and its forks)/APatch(and its forks) modules for installing microG on stock Android 11-17.
 
 ## Modules
 
@@ -10,18 +17,18 @@ Noogle microG | Installs microG Services
 
 ## Install
 
-It requires Magisk to be installed obviously as it's a Magisk module. If you don't have it yet, consult the [official installation instructions](https://topjohnwu.github.io/Magisk/install.html).
+It requires Magisk/KernelSU(and its forks)/APatch(and its forks) to be installed obviously as it's a Magisk module. If you don't have it yet, consult the [official installation instructions](https://topjohnwu.github.io/Magisk/install.html).
 
 > [!TIP]
 > It's a good idea to enable ADB debugging as well before installing in case of any issues.
 
 > [!WARNING]
 > Please make sure that the contents of the `remove_files` string in the [common.sh](./src/module-microg/common.sh) script exist on your device.
-> If not, use a command like `# find -L /system -type f -name '*<GmsCore|Phonesky|...>*'` to find the correct path, replace it and then follow the [Build Instructions](#build).
+> If not, use a command like `# find -L /system -type d -name '*<GmsCore|Phonesky|...>*'` to find the correct path, replace it and then follow the [Build Instructions](#build).
 
 1. Download latest version from [releases](https://github.com/qr243vbi/noogle-magisk/releases)
     - Or build it yourself
-2. Install through Magisk app
+2. Install through any root app
 3. Reboot
 4. In Magisk click "Action" button next to module to grant permissions
     - Or open microG app and grant them through Self-Check
@@ -38,11 +45,19 @@ It requires Magisk to be installed obviously as it's a Magisk module. If you don
     - Check if [msys2](https://www.msys2.org) installed on Windows, or install msys2 following the [instructions](https://www.msys2.org/#installation)
 2. Install `zip`, `curl`, `jq` if not present
     - Type `pacman -S --needed zip curl jq` on msys2
-3. [Download APKs manually](https://microg.org/download.html) and place in `apk/` directory or run `./scripts/download-apks.sh`
-4. Run `scripts/build-noogle-microg.sh`
+3. Install Android SDK build-tools (for `keytool` and `apksigner`)
+    - Download from [Android SDK command-line tools](https://developer.android.com/studio#command-tools)
+    - Add to `PATH`: `export PATH="$PATH:/path/to/android/sdk/build-tools/latest"`
+    - Or set at the top of the build script:
+      ```sh
+      export ANDROID_SDK=/path/to/android/sdk
+      export PATH="$PATH:$ANDROID_SDK/build-tools/latest"
+      ```
+4. [Download APKs manually](https://microg.org/download.html) and place in `apk/` directory or run `./scripts/download-apks.sh`
+5. Run `scripts/build-noogle-microg.sh`
     - Check `-h` flag for help with build options
     - Module will be created in `dist/`
-5. Or run `scripts/install-noogle.sh` to build and install through ADB
+6. Or run `scripts/install-noogle.sh` to build and install through ADB   
 
 ## Tested
 
@@ -58,6 +73,7 @@ User updates | Installing microG updates from F-Droid repo
 The module was tested on:
 Device | OS | Android Version
 :--- | :---: | :---:
+Xiaomi 12T Pro | LunarisAOSP 3.12 | 16
 Nothing Phone (1) | NothingOS 3.0 | 15
 Lenovo Yoga Tab 13 | Stock | 13
 Samsung Galaxy Tab S | LineageOS 17.1 | 10
@@ -70,7 +86,7 @@ More to come...
 In order for microG apps to have the correct signatures visible by Android, your ROM must allow for [signature spoofing](https://github.com/microg/GmsCore/wiki/Signature-Spoofing). If it does not (like any stock Android), this is the way I recommend:
 
 1. Enable Zygisk in Magisk's settings
-2. Download and install LSPosed through Magisk
+2. Download and install LSPosed through any root app
     - [JingMatrix fork](https://github.com/JingMatrix/LSPosed/releases)
 3. Download and install [FakeGApps](https://github.com/whew-inc/FakeGApps/releases) APK
 4. Reboot
@@ -85,6 +101,6 @@ If you want to use other modules interacting with microG, like Play Integrity Fi
 ### Bootloop
 In this case if you have ADB debugging enabled just connect your phone to PC and run `scripts/disable-noogle.sh` in terminal. It will disable Noogle microG module and reboot your device.
 
-More nuclear option is to run `adb shell magisk --remove-modules`. It will remove all modules from Magisk and reboot.
+More nuclear option is to run for Magisk:`adb shell magisk --remove-modules`, KernelSU (and forks like KernelSU-Next): `adb shell ksud --remove-modules`, APatch (and forks):	`adb shell su -c "rm -rf /data/adb/modules"`. It will remove all modules from Magisk and reboot.
 
 If you don't have ADB enabled, you may try to restart the device a few times (holding Power + Vol-) while keeping Vol- for a while until animalted boot animation will start. This will trigger Magisk safe mode and modules will be disabled. More about this in [official documentation](https://topjohnwu.github.io/Magisk/faq.html).
